@@ -1,0 +1,31 @@
+<script>
+    //login : roulette et password : Roulette@1920.
+
+    //Il faut demander a l'utilisateur son login 
+    var login = prompt("Donnez votre login"), username, password, tryAgain = 0;
+    if (login == null )
+        document.write("");
+    else{
+        while (login !== 'roulette') {
+            login = prompt("Donnez votre login");
+        }
+        if (login === 'roulette') {
+            do {
+                password = prompt("Donnez votre password");
+                tryAgain++;
+                if (tryAgain == 3){
+                    alert("Mot de passe saisi incorrect");
+                    break;
+                }
+                else if (password === 'Roulette@1920' && tryAgain != 3){
+                    var confirmation = confirm("Etes-vous sur(e) de vouloir continuer ?");
+                    if(confirmation == true){
+                       document.location = 'html/accueil.html';
+                            break; 
+                    }   
+                } 
+            }while (password != 'Roulette@1920' || tryAgain < 4);
+        }
+        else document.write("");
+    } 
+</script>
